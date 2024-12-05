@@ -80,10 +80,10 @@ export function MediaPopover({ children, plugin }: MediaPopoverProps) {
             <FloatingMediaPrimitive.EditButton
               className={buttonVariants({ size: 'sm', variant: 'ghost' })}
             >
-              Edit link
+              编辑链接
             </FloatingMediaPrimitive.EditButton>
 
-            <CaptionButton variant="ghost">Caption</CaptionButton>
+            <CaptionButton variant="ghost">修改标题</CaptionButton>
 
             <Separator orientation="vertical" className="mx-1 h-6" />
 

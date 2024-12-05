@@ -49,7 +49,7 @@ export const MediaFileElement = withHOC(
               <CaptionTextarea
                 className="text-left"
                 readOnly={readOnly}
-                placeholder="Write a caption..."
+                placeholder="输入标题"
               />
             </Caption>
           </div>

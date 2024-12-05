@@ -15,9 +15,15 @@ export function PlateEditor() {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <Plate editor={editor}>
+      <Plate editor={editor} onChange={(value) =>{
+         console.log(value)
+        const { editor } = value;
+        // 获取纯文本
+        // const text = editor.getText(editor);
+       
+      }}>
         <EditorContainer>
-          <Editor variant="demo" />
+          <Editor variant='default'  />
         </EditorContainer>
 
         <SettingsDialog />

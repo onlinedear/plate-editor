@@ -35,8 +35,8 @@ export function CommentMoreDropdown() {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
-          <DropdownMenuItem {...editProps}>Edit comment</DropdownMenuItem>
-          <DropdownMenuItem {...deleteProps}>Delete comment</DropdownMenuItem>
+          <DropdownMenuItem {...editProps}>编辑</DropdownMenuItem>
+          <DropdownMenuItem {...deleteProps}>删除</DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -24,12 +24,12 @@ export function CommentCreateForm() {
       <CommentAvatar userId={myUserId} />
 
       <div className="flex grow flex-col items-end gap-2">
-        <CommentNewTextarea className={inputVariants()} />
+        <CommentNewTextarea className={inputVariants()} placeholder='添加评论' />
 
         <CommentNewSubmitButton
           className={cn(buttonVariants({ size: 'sm' }), 'w-[90px]')}
         >
-          Comment
+          提交
         </CommentNewSubmitButton>
       </div>
     </div>

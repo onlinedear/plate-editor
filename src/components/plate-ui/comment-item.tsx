@@ -8,12 +8,18 @@ import {
   useCommentItemContentState,
 } from '@udecode/plate-comments/react';
 import { useEditorPlugin } from '@udecode/plate-common/react';
-import { formatDistance } from 'date-fns';
+import dayjs from 'dayjs';
+import relativeTime from "dayjs/plugin/relativeTime";
+import 'dayjs/locale/zh-cn';
+
 
 import { CommentAvatar } from './comment-avatar';
 import { CommentMoreDropdown } from './comment-more-dropdown';
 import { CommentResolveButton } from './comment-resolve-button';
 import { CommentValue } from './comment-value';
+dayjs.locale('zh-cn')
+dayjs.extend(relativeTime)
+
 
 type PlateCommentProps = {
   commentId: string;
@@ -37,7 +43,7 @@ function CommentItemContent() {
         <h4 className="text-sm font-semibold leading-none">{user?.name}</h4>
 
         <div className="text-xs leading-none text-muted-foreground">
-          {formatDistance(comment.createdAt, Date.now())} ago
+          {dayjs(comment.createdAt).fromNow()}
         </div>
 
         {isMyComment && (

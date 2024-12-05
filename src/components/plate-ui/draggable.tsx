@@ -144,7 +144,7 @@ const DragHandle = React.memo(() => {
           />
         </TooltipTrigger>
         <TooltipPortal>
-          <TooltipContent>Drag to move</TooltipContent>
+          <TooltipContent>可拖拽和点击</TooltipContent>
         </TooltipPortal>
       </Tooltip>
     </TooltipProvider>

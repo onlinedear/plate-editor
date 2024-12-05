@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { DayPicker } from 'react-day-picker';
+import { zhCN } from 'date-fns/locale';
 
 import { cn } from '@udecode/cn';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -18,6 +19,7 @@ function Calendar({
 }: CalendarProps) {
   return (
     <DayPicker
+      locale={zhCN}
       className={cn('p-3', className)}
       classNames={{
         caption: 'flex justify-center pt-1 relative items-center',

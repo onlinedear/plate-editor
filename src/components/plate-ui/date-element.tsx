@@ -23,7 +23,7 @@ export const DateElement = withRef<typeof PlateElement>(
           <PopoverTrigger asChild>
             <span
               className={cn(
-                'w-fit cursor-pointer rounded-sm bg-muted px-1 text-muted-foreground'
+                'w-fit cursor-pointer rounded-sm bg-muted px-1 text-muted-foreground py-1'
               )}
               contentEditable={false}
               draggable
@@ -46,9 +46,9 @@ export const DateElement = withRef<typeof PlateElement>(
                       today.setDate(today.getDate() + 2)
                     ).toDateString() === elementDate.toDateString();
 
-                  if (isToday) return 'Today';
-                  if (isYesterday) return 'Yesterday';
-                  if (isTomorrow) return 'Tomorrow';
+                  if (isToday) return '今天';
+                  if (isYesterday) return '昨天';
+                  if (isTomorrow) return '明天';
 
                   return elementDate.toLocaleDateString(undefined, {
                     day: 'numeric',
@@ -57,7 +57,7 @@ export const DateElement = withRef<typeof PlateElement>(
                   });
                 })()
               ) : (
-                <span>Pick a date</span>
+                <span>选择日期</span>
               )}
             </span>
           </PopoverTrigger>

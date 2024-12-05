@@ -59,6 +59,7 @@ import {
   useOpenState,
 } from './dropdown-menu';
 import { ToolbarButton } from './toolbar';
+import { useFilePicker } from 'use-file-picker';
 
 type Group = {
   group: string;
@@ -73,159 +74,170 @@ interface Item {
   label?: string;
 }
 
-const groups: Group[] = [
-  {
-    group: '基本',
-    items: [
-      {
-        icon: <PilcrowIcon />,
-        label: '正文',
-        value: ParagraphPlugin.key,
-      },
-      {
-        icon: <Heading1Icon />,
-        label: '标题 1',
-        value: HEADING_KEYS.h1,
-      },
-      {
-        icon: <Heading2Icon />,
-        label: '标题 2',
-        value: HEADING_KEYS.h2,
-      },
-      {
-        icon: <Heading3Icon />,
-        label: '标题 3',
-        value: HEADING_KEYS.h3,
-      },
-      {
-        icon: <TableIcon />,
-        label: '表格',
-        value: TablePlugin.key,
-      },
-      {
-        icon: <FileCodeIcon />,
-        label: '代码块',
-        value: CodeBlockPlugin.key,
-      },
-      {
-        icon: <QuoteIcon />,
-        label: '引用',
-        value: BlockquotePlugin.key,
-      },
-      {
-        icon: <MinusIcon />,
-        label: '分割线',
-        value: HorizontalRulePlugin.key,
-      },
-    ].map((item) => ({
-      ...item,
-      onSelect: (editor, value) => {
-        insertBlock(editor, value);
-      },
-    })),
-  },
-  {
-    group: 'Lists',
-    items: [
-      {
-        icon: <ListIcon />,
-        label: '无序列表',
-        value: ListStyleType.Disc,
-      },
-      {
-        icon: <ListOrderedIcon />,
-        label: '有序列表',
-        value: ListStyleType.Decimal,
-      },
-      {
-        icon: <SquareIcon />,
-        label: '任务列表',
-        value: INDENT_LIST_KEYS.todo,
-      },
-      {
-        icon: <ChevronRightIcon />,
-        label: '折叠列表',
-        value: TogglePlugin.key,
-      },
-    ].map((item) => ({
-      ...item,
-      onSelect: (editor, value) => {
-        insertBlock(editor, value);
-      },
-    })),
-  },
-  {
-    group: '媒体',
-    items: [
-      {
-        icon: <ImageIcon />,
-        label: '图片',
-        value: ImagePlugin.key,
-      },
-      {
-        icon: <FilmIcon />,
-        label: '视频',
-        value: MediaEmbedPlugin.key,
-      },
-      {
-        icon: <PenToolIcon />,
-        label: 'Excalidraw 图',
-        value: ExcalidrawPlugin.key,
-      },
-    ].map((item) => ({
-      ...item,
-      onSelect: (editor, value) => {
-        insertBlock(editor, value);
-      },
-    })),
-  },
-  {
-    group: '链接&日期',
-    items: [
-      {
-        icon: <Link2Icon />,
-        label: '链接',
-        value: LinkPlugin.key,
-      },
-      {
-        focusEditor: true,
-        icon: <CalendarIcon />,
-        label: '日期',
-        value: DatePlugin.key,
-      },
-    ].map((item) => ({
-      ...item,
-      onSelect: (editor, value) => {
-        insertInlineElement(editor, value);
-      },
-    })),
-  },
-  {
-    group: '布局',
-    items: [
-      {
-        icon: <TableOfContentsIcon />,
-        label: '目录',
-        value: TocPlugin.key,
-      },
-      {
-        icon: <Columns3Icon />,
-        label: '分栏卡片',
-        value: 'action_three_columns',
-      },
-    ].map((item) => ({
-      ...item,
-      onSelect: (editor, value) => {
-        insertBlock(editor, value);
-      },
-    })),
-  },
-  
-];
-
 export function InsertDropdownMenu(props: DropdownMenuProps) {
   const editor = useEditorRef();
   const openState = useOpenState();
+
+  const { openFilePicker } = useFilePicker({
+    accept: '*',
+    multiple: true,
+    onFilesSelected: ({ plainFiles: updatedFiles }) => {
+      (editor as any).tf.insert.media(updatedFiles);
+    },
+  });
+
+  const groups: Group[] = [
+    {
+      group: '文本',
+      items: [
+        {
+          icon: <PilcrowIcon />,
+          label: '正文',
+          value: ParagraphPlugin.key,
+        },
+        {
+          icon: <Heading1Icon />,
+          label: '标题 1',
+          value: HEADING_KEYS.h1,
+        },
+        {
+          icon: <Heading2Icon />,
+          label: '标题 2',
+          value: HEADING_KEYS.h2,
+        },
+        {
+          icon: <Heading3Icon />,
+          label: '标题 3',
+          value: HEADING_KEYS.h3,
+        },
+        {
+          icon: <TableIcon />,
+          label: '表格',
+          value: TablePlugin.key,
+        },
+        {
+          icon: <FileCodeIcon />,
+          label: '代码块',
+          value: CodeBlockPlugin.key,
+        },
+        {
+          icon: <QuoteIcon />,
+          label: '引用',
+          value: BlockquotePlugin.key,
+        },
+        {
+          icon: <MinusIcon />,
+          label: '分割线',
+          value: HorizontalRulePlugin.key,
+        },
+      ].map((item) => ({
+        ...item,
+        onSelect: (editor, value) => {
+          insertBlock(editor, value);
+        },
+      })),
+    },
+    {
+      group: '列表',
+      items: [
+        {
+          icon: <ListIcon />,
+          label: '无序列表',
+          value: ListStyleType.Disc,
+        },
+        {
+          icon: <ListOrderedIcon />,
+          label: '有序列表',
+          value: ListStyleType.Decimal,
+        },
+        {
+          icon: <SquareIcon />,
+          label: '任务列表',
+          value: INDENT_LIST_KEYS.todo,
+        },
+        {
+          icon: <ChevronRightIcon />,
+          label: '折叠列表',
+          value: TogglePlugin.key,
+        },
+      ].map((item) => ({
+        ...item,
+        onSelect: (editor, value) => {
+          insertBlock(editor, value);
+        },
+      })),
+    },
+    {
+      group: '媒体',
+      items: [
+        {
+          icon: <ImageIcon />,
+          label: '图片',
+          value: ImagePlugin.key,
+        },
+        {
+          icon: <FilmIcon />,
+          label: '视频',
+          value: MediaEmbedPlugin.key,
+        },
+        // {
+        //   icon: <PenToolIcon />,
+        //   label: 'Excalidraw 图',
+        //   value: ExcalidrawPlugin.key,
+        // },
+      ].map((item) => ({
+        ...item,
+        onSelect: (editor, value) => {
+          if (value === ImagePlugin.key || value === MediaEmbedPlugin.key) {
+            openFilePicker();
+          } else {
+            insertBlock(editor, value);
+          }
+        },
+      })),
+    },
+    {
+      group: '链接&日期',
+      items: [
+        {
+          icon: <Link2Icon />,
+          label: '链接',
+          value: LinkPlugin.key,
+        },
+        {
+          focusEditor: true,
+          icon: <CalendarIcon />,
+          label: '日期',
+          value: DatePlugin.key,
+        },
+      ].map((item) => ({
+        ...item,
+        onSelect: (editor, value) => {
+          insertInlineElement(editor, value);
+        },
+      })),
+    },
+    {
+      group: '布局',
+      items: [
+        {
+          icon: <TableOfContentsIcon />,
+          label: '目录',
+          value: TocPlugin.key,
+        },
+        {
+          icon: <Columns3Icon />,
+          label: '分栏卡片',
+          value: 'action_three_columns',
+        },
+      ].map((item) => ({
+        ...item,
+        onSelect: (editor, value) => {
+          insertBlock(editor, value);
+        },
+      })),
+    },
+  ];
 
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
