@@ -41,7 +41,7 @@ export const withPlaceholders = (components: any) =>
     {
       key: ParagraphPlugin.key,
       hideOnBlur: true,
-      placeholder: 'Type a paragraph',
+      placeholder: '输入 / 唤起更多',
       query: {
         maxLevel: 1,
       },
@@ -49,6 +49,6 @@ export const withPlaceholders = (components: any) =>
     {
       key: HEADING_KEYS.h1,
       hideOnBlur: false,
-      placeholder: 'Untitled',
+      placeholder: '请输入标题',
     },
   ]);

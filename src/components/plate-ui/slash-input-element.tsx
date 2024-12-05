@@ -84,25 +84,25 @@ const groups: Group[] = [
       {
         icon: <PilcrowIcon />,
         keywords: ['paragraph'],
-        label: 'Text',
+        label: '正文',
         value: ParagraphPlugin.key,
       },
       {
         icon: <Heading1Icon />,
         keywords: ['title', 'h1'],
-        label: 'Heading 1',
+        label: '标题 1',
         value: HEADING_KEYS.h1,
       },
       {
         icon: <Heading2Icon />,
         keywords: ['subtitle', 'h2'],
-        label: 'Heading 2',
+        label: '标题 2',
         value: HEADING_KEYS.h2,
       },
       {
         icon: <Heading3Icon />,
         keywords: ['subtitle', 'h3'],
-        label: 'Heading 3',
+        label: '标题 3',
         value: HEADING_KEYS.h3,
       },
       {

@@ -36,13 +36,13 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
     editing: (
       <>
         <Pen />
-        <span className="hidden lg:inline">Editing</span>
+        <span className="hidden lg:inline">编辑</span>
       </>
     ),
     viewing: (
       <>
         <Eye />
-        <span className="hidden lg:inline">Viewing</span>
+        <span className="hidden lg:inline">预览</span>
       </>
     ),
   };
@@ -52,7 +52,7 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
       <DropdownMenuTrigger asChild>
         <ToolbarButton
           pressed={openState.open}
-          tooltip="Editing mode"
+          tooltip="编辑器模式"
           isDropdown
         >
           {item[value]}

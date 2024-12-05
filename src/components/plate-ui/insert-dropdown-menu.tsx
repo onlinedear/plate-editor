@@ -75,46 +75,46 @@ interface Item {
 
 const groups: Group[] = [
   {
-    group: 'Basic blocks',
+    group: '基本',
     items: [
       {
         icon: <PilcrowIcon />,
-        label: 'Paragraph',
+        label: '正文',
         value: ParagraphPlugin.key,
       },
       {
         icon: <Heading1Icon />,
-        label: 'Heading 1',
+        label: '标题 1',
         value: HEADING_KEYS.h1,
       },
       {
         icon: <Heading2Icon />,
-        label: 'Heading 2',
+        label: '标题 2',
         value: HEADING_KEYS.h2,
       },
       {
         icon: <Heading3Icon />,
-        label: 'Heading 3',
+        label: '标题 3',
         value: HEADING_KEYS.h3,
       },
       {
         icon: <TableIcon />,
-        label: 'Table',
+        label: '表格',
         value: TablePlugin.key,
       },
       {
         icon: <FileCodeIcon />,
-        label: 'Code',
+        label: '代码块',
         value: CodeBlockPlugin.key,
       },
       {
         icon: <QuoteIcon />,
-        label: 'Quote',
+        label: '引用',
         value: BlockquotePlugin.key,
       },
       {
         icon: <MinusIcon />,
-        label: 'Divider',
+        label: '分割线',
         value: HorizontalRulePlugin.key,
       },
     ].map((item) => ({
@@ -129,22 +129,22 @@ const groups: Group[] = [
     items: [
       {
         icon: <ListIcon />,
-        label: 'Bulleted list',
+        label: '无序列表',
         value: ListStyleType.Disc,
       },
       {
         icon: <ListOrderedIcon />,
-        label: 'Numbered list',
+        label: '有序列表',
         value: ListStyleType.Decimal,
       },
       {
         icon: <SquareIcon />,
-        label: 'To-do list',
+        label: '任务列表',
         value: INDENT_LIST_KEYS.todo,
       },
       {
         icon: <ChevronRightIcon />,
-        label: 'Toggle list',
+        label: '折叠列表',
         value: TogglePlugin.key,
       },
     ].map((item) => ({
@@ -155,21 +155,21 @@ const groups: Group[] = [
     })),
   },
   {
-    group: 'Media',
+    group: '媒体',
     items: [
       {
         icon: <ImageIcon />,
-        label: 'Image',
+        label: '图片',
         value: ImagePlugin.key,
       },
       {
         icon: <FilmIcon />,
-        label: 'Embed',
+        label: '视频',
         value: MediaEmbedPlugin.key,
       },
       {
         icon: <PenToolIcon />,
-        label: 'Excalidraw',
+        label: 'Excalidraw 图',
         value: ExcalidrawPlugin.key,
       },
     ].map((item) => ({
@@ -180,37 +180,17 @@ const groups: Group[] = [
     })),
   },
   {
-    group: 'Advanced blocks',
-    items: [
-      {
-        icon: <TableOfContentsIcon />,
-        label: 'Table of contents',
-        value: TocPlugin.key,
-      },
-      {
-        icon: <Columns3Icon />,
-        label: '3 columns',
-        value: 'action_three_columns',
-      },
-    ].map((item) => ({
-      ...item,
-      onSelect: (editor, value) => {
-        insertBlock(editor, value);
-      },
-    })),
-  },
-  {
-    group: 'Inline',
+    group: '链接&日期',
     items: [
       {
         icon: <Link2Icon />,
-        label: 'Link',
+        label: '链接',
         value: LinkPlugin.key,
       },
       {
         focusEditor: true,
         icon: <CalendarIcon />,
-        label: 'Date',
+        label: '日期',
         value: DatePlugin.key,
       },
     ].map((item) => ({
@@ -220,6 +200,27 @@ const groups: Group[] = [
       },
     })),
   },
+  {
+    group: '布局',
+    items: [
+      {
+        icon: <TableOfContentsIcon />,
+        label: '目录',
+        value: TocPlugin.key,
+      },
+      {
+        icon: <Columns3Icon />,
+        label: '分栏卡片',
+        value: 'action_three_columns',
+      },
+    ].map((item) => ({
+      ...item,
+      onSelect: (editor, value) => {
+        insertBlock(editor, value);
+      },
+    })),
+  },
+  
 ];
 
 export function InsertDropdownMenu(props: DropdownMenuProps) {
@@ -229,7 +230,7 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip="Insert" isDropdown>
+        <ToolbarButton pressed={openState.open} tooltip="插入" isDropdown>
           <PlusIcon />
         </ToolbarButton>
       </DropdownMenuTrigger>

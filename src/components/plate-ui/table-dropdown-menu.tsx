@@ -52,7 +52,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip="Table" isDropdown>
+        <ToolbarButton pressed={openState.open} tooltip="表格" isDropdown>
           <Table />
         </ToolbarButton>
       </DropdownMenuTrigger>
@@ -76,7 +76,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <Plus />
-                Insert table
+                插入表格
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="min-w-[180px]"
@@ -87,7 +87,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <Trash />
-                Delete table
+                删除表格
               </DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
@@ -95,7 +95,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger disabled={!tableSelected}>
               <RectangleVertical />
-              <span>Column</span>
+              <span>列</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem
@@ -107,7 +107,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <Plus />
-                Insert column after
+                在后面插入列
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="min-w-[180px]"
@@ -118,7 +118,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <Minus />
-                Delete column
+                删除列
               </DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
@@ -126,7 +126,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger disabled={!tableSelected}>
               <RectangleHorizontal />
-              <span>Row</span>
+              <span>行</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem
@@ -138,7 +138,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <Plus />
-                Insert row after
+                在下面插入行
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="min-w-[180px]"
@@ -149,7 +149,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
                 }}
               >
                 <Minus />
-                Delete row
+                删除行
               </DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuSub>

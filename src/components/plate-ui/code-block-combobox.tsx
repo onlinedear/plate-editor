@@ -171,9 +171,11 @@ export function CodeBlockCombobox() {
           <CommandInput
             value={value}
             onValueChange={(value) => setValue(value)}
-            placeholder="Search language..."
+            placeholder="搜索语言"
           />
-          <CommandEmpty>No language found.</CommandEmpty>
+          <CommandEmpty>
+            没有找到匹配的语言
+          </CommandEmpty>
 
           <CommandList>
             {items.map((language) => (
