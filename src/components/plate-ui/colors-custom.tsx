@@ -63,7 +63,7 @@ export function ColorCustom({
             )}
             {...menuItemProps}
           >
-            <span className="sr-only">Custom</span>
+            <span className="sr-only">自定义</span>
             <PlusIcon />
           </DropdownMenuItem>
         </ColorInput>

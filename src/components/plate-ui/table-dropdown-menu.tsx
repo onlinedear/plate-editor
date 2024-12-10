@@ -65,7 +65,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <Table />
-              <span>Table</span>
+              <span>表格</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem
@@ -95,7 +95,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger disabled={!tableSelected}>
               <RectangleVertical />
-              <span>列</span>
+              <span>表格列</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem
@@ -126,7 +126,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger disabled={!tableSelected}>
               <RectangleHorizontal />
-              <span>行</span>
+              <span>表格行</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem

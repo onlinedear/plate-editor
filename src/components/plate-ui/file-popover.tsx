@@ -25,12 +25,12 @@ import { inputVariants } from './input';
 import { Popover, PopoverAnchor, PopoverContent } from './popover';
 import { Separator } from './separator';
 
-export interface MediaPopoverProps {
+export interface FilePopoverProps {
   children: React.ReactNode;
-  plugin: WithRequiredKey;
+  onOpenClick?: () => void;
 }
 
-export function MediaPopover({ children, plugin }: MediaPopoverProps) {
+export function FilePopover({ children, onOpenClick }: FilePopoverProps) {
   const readOnly = useReadOnly();
   const selected = useSelected();
 
@@ -39,10 +39,9 @@ export function MediaPopover({ children, plugin }: MediaPopoverProps) {
     []
   );
   const isOpen = !readOnly && selected && selectionCollapsed;
-  const isEditing = useFloatingMediaSelectors().isEditing();
 
   useEffect(() => {
-    if (!isOpen && isEditing) {
+    if (!isOpen) {
       floatingMediaActions.isEditing(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -61,37 +60,20 @@ export function MediaPopover({ children, plugin }: MediaPopoverProps) {
         className="w-auto p-1"
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
-        {isEditing ? (
-          <div className="flex w-[330px] flex-col">
-            <div className="flex items-center">
-              <div className="flex items-center pl-2 pr-1 text-muted-foreground">
-                <Link className="size-4" />
-              </div>
-
-              <FloatingMediaPrimitive.UrlInput
-                className={inputVariants({ h: 'sm', variant: 'ghost' })}
-                placeholder="输入图片链接"
-                options={{ plugin }}
-              />
-            </div>
-          </div>
-        ) : (
-          <div className="box-content flex items-center">
-            <FloatingMediaPrimitive.EditButton
-              className={buttonVariants({ size: 'sm', variant: 'ghost' })}
-            >
-              编辑链接
-            </FloatingMediaPrimitive.EditButton>
-
-            <CaptionButton variant="ghost">修改标题</CaptionButton>
-
-            <Separator orientation="vertical" className="mx-1 h-6" />
-
-            <Button size="icon" variant="ghost" {...buttonProps}>
-              <Trash2Icon />
-            </Button>
-          </div>
-        )}
+        <div className="box-content flex items-center">
+          <Button
+            variant="ghost"
+            onClick={() => {
+              onOpenClick?.();
+            }}
+          >
+            查看文件
+          </Button>
+          <Separator orientation="vertical" className="mx-1 h-6" />
+          <Button size="icon" variant="ghost" {...buttonProps}>
+            <Trash2Icon />
+          </Button>
+        </div>
       </PopoverContent>
     </Popover>
   );

@@ -243,7 +243,9 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
         <ToolbarButton pressed={openState.open} tooltip="插入" isDropdown>
-          <PlusIcon />
+          <div className="flex justify-center items-center bg-[#eee] p-1 rounded-full">
+            <PlusIcon />
+          </div>
         </ToolbarButton>
       </DropdownMenuTrigger>
 

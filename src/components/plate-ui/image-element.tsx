@@ -35,24 +35,20 @@ export const ImageElement = withHOC(
       const { handleRef } = useDraggable(state);
 
       return (
-        <MediaPopover plugin={ImagePlugin}>
-          <PlateElement
-            ref={ref}
-            className={cn('py-2.5', className)}
-            {...props}
-          >
-            <figure className="group relative m-0" contentEditable={false}>
-              <Resizable
-                align={align}
-                options={{
-                  align,
-                  readOnly,
-                }}
-              >
-                <ResizeHandle
-                  className={mediaResizeHandleVariants({ direction: 'left' })}
-                  options={{ direction: 'left' }}
-                />
+        <PlateElement ref={ref} className={cn('py-2.5', className)} {...props}>
+          <figure className="group relative m-0" contentEditable={false}>
+            <Resizable
+              align={align}
+              options={{
+                align,
+                readOnly,
+              }}
+            >
+              <ResizeHandle
+                className={mediaResizeHandleVariants({ direction: 'left' })}
+                options={{ direction: 'left' }}
+              />
+              <MediaPopover plugin={ImagePlugin}>
                 <Image
                   ref={handleRef}
                   className={cn(
@@ -64,28 +60,28 @@ export const ImageElement = withHOC(
                   alt=""
                   {...nodeProps}
                 />
-                <ResizeHandle
-                  className={mediaResizeHandleVariants({
-                    direction: 'right',
-                  })}
-                  options={{ direction: 'right' }}
-                />
-              </Resizable>
+              </MediaPopover>
+              <ResizeHandle
+                className={mediaResizeHandleVariants({
+                  direction: 'right',
+                })}
+                options={{ direction: 'right' }}
+              />
+            </Resizable>
 
-              <Caption style={{ width }} align={align}>
-                <CaptionTextarea
-                  readOnly={readOnly}
-                  onFocus={(e) => {
-                    e.preventDefault();
-                  }}
-                  placeholder="输入标题"
-                />
-              </Caption>
-            </figure>
+            <Caption style={{ width }} align={align}>
+              <CaptionTextarea
+                readOnly={readOnly}
+                onFocus={(e) => {
+                  e.preventDefault();
+                }}
+                placeholder="输入标题"
+              />
+            </Caption>
+          </figure>
 
-            {children}
-          </PlateElement>
-        </MediaPopover>
+          {children}
+        </PlateElement>
       );
     }
   )

@@ -29,18 +29,22 @@ const items = [
   {
     icon: AlignLeftIcon,
     value: 'left',
+    label: '左对齐',
   },
   {
     icon: AlignCenterIcon,
     value: 'center',
+    label: '居中对齐',
   },
   {
     icon: AlignRightIcon,
     value: 'right',
+    label: '右对齐',
   },
   {
     icon: AlignJustifyIcon,
     value: 'justify',
+    label: '两端对齐',
   },
 ];
 
@@ -63,9 +67,10 @@ export function AlignDropdownMenu({ children, ...props }: DropdownMenuProps) {
 
       <DropdownMenuContent className="min-w-0" align="start">
         <DropdownMenuRadioGroup {...radioGroupProps}>
-          {items.map(({ icon: Icon, value: itemValue }) => (
+          {items.map(({ icon: Icon, value: itemValue,label }) => (
             <DropdownMenuRadioItem key={itemValue} value={itemValue} hideIcon>
               <Icon />
+              <span className="ml-1">{label}</span>
             </DropdownMenuRadioItem>
           ))}
         </DropdownMenuRadioGroup>

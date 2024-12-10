@@ -67,28 +67,28 @@ export const TableBordersDropdownMenuContent = withRef<
           onCheckedChange={getOnSelectTableBorder('bottom')}
         >
           <BorderBottom />
-          <div>Bottom Border</div>
+          <div>下边框</div>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={hasTopBorder}
           onCheckedChange={getOnSelectTableBorder('top')}
         >
           <BorderTop />
-          <div>Top Border</div>
+          <div>上边框</div>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={hasLeftBorder}
           onCheckedChange={getOnSelectTableBorder('left')}
         >
           <BorderLeft />
-          <div>Left Border</div>
+          <div>左边框</div>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={hasRightBorder}
           onCheckedChange={getOnSelectTableBorder('right')}
         >
           <BorderRight />
-          <div>Right Border</div>
+          <div>右边框</div>
         </DropdownMenuCheckboxItem>
       </DropdownMenuGroup>
 
@@ -98,14 +98,14 @@ export const TableBordersDropdownMenuContent = withRef<
           onCheckedChange={getOnSelectTableBorder('none')}
         >
           <BorderNone />
-          <div>No Border</div>
+          <div>隐藏所有边框</div>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={hasOuterBorders}
           onCheckedChange={getOnSelectTableBorder('outer')}
         >
           <BorderAll />
-          <div>Outside Borders</div>
+          <div>显示所有边框</div>
         </DropdownMenuCheckboxItem>
       </DropdownMenuGroup>
     </DropdownMenuContent>
@@ -139,7 +139,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
         isMenu
       >
         <Combine />
-        Merge
+        合并
       </Button>
     );
 
@@ -151,7 +151,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
         isMenu
       >
         <Ungroup />
-        Unmerge
+        取消合并
       </Button>
     );
 
@@ -161,7 +161,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" isMenu>
               <BorderAll />
-              Borders
+              边框设置
             </Button>
           </DropdownMenuTrigger>
 
@@ -172,7 +172,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
 
         <Button variant="ghost" contentEditable={false} isMenu {...buttonProps}>
           <Trash2Icon />
-          Delete
+          删除
         </Button>
       </>
     );

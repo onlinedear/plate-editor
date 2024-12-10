@@ -24,6 +24,7 @@ import { buttonVariants } from './button';
 import { inputVariants } from './input';
 import { popoverVariants } from './popover';
 import { Separator } from './separator';
+import { toast } from 'sonner';
 
 const floatingOptions: UseVirtualFloatingOptions = {
   middleware: [
@@ -85,6 +86,19 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
           className={inputVariants({ h: 'sm', variant: 'ghost' })}
           placeholder="粘贴链接，回车确认"
           data-plate-focus
+          onKeyUp={(e) => {
+            const value = (e.target as any).value 
+            if(e.key === 'Enter'){
+              if(value.trim().length === 0){
+                toast.error('链接不能为空')
+              } else{
+                // url正则校验
+                if(!/^https?:\/\/[^\s]+$/.test(value)){
+                  toast.error('链接格式不正确')
+                }
+              }
+            }
+          }}
         />
       </div>
       <Separator className="my-1" />
