@@ -34,7 +34,7 @@ export function MoreDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip="更多">
+        <ToolbarButton pressed={openState.open} tooltip="更多文本样式">
           <MoreHorizontalIcon />
         </ToolbarButton>
       </DropdownMenuTrigger>

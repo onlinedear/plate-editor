@@ -110,13 +110,13 @@ export function BlockContextMenu({ children }: { children: React.ReactNode }) {
         }}
       >
         <ContextMenuGroup>
-          <ContextMenuItem
+          {/* <ContextMenuItem
             onClick={() => {
               setValue('askAI');
             }}
           >
             询问AI
-          </ContextMenuItem>
+          </ContextMenuItem> */}
           <ContextMenuItem
             onClick={() => {
               editor

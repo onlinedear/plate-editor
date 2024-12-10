@@ -70,12 +70,12 @@ export function FixedToolbarButtons() {
             <UndoToolbarButton />
             <RedoToolbarButton />
           </ToolbarGroup>
-
+          {/* 
           <ToolbarGroup>
             <AIToolbarButton tooltip="AI 命令">
               <WandSparklesIcon />
             </AIToolbarButton>
-          </ToolbarGroup>
+          </ToolbarGroup> */}
 
           <ToolbarGroup>
             <ExportToolbarButton>
@@ -93,10 +93,7 @@ export function FixedToolbarButtons() {
               <BoldIcon />
             </MarkToolbarButton>
 
-            <MarkToolbarButton
-              nodeType={ItalicPlugin.key}
-              tooltip="斜体 (⌘+I)"
-            >
+            <MarkToolbarButton nodeType={ItalicPlugin.key} tooltip="斜体 (⌘+I)">
               <ItalicIcon />
             </MarkToolbarButton>
 
@@ -173,7 +170,7 @@ export function FixedToolbarButtons() {
         <MarkToolbarButton nodeType={HighlightPlugin.key} tooltip="高亮">
           <HighlighterIcon />
         </MarkToolbarButton>
-        <CommentToolbarButton />
+        {/* <CommentToolbarButton /> */}
       </ToolbarGroup>
 
       <ToolbarGroup>

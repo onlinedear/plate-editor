@@ -34,12 +34,12 @@ export function FloatingToolbarButtons() {
     <>
       {!readOnly && (
         <>
-          <ToolbarGroup>
+          {/* <ToolbarGroup>
             <AIToolbarButton tooltip="AI 命令">
               <WandSparklesIcon />
               询问 AI
             </AIToolbarButton>
-          </ToolbarGroup>
+          </ToolbarGroup> */}
 
           <ToolbarGroup>
             <TurnIntoDropdownMenu />
@@ -79,7 +79,7 @@ export function FloatingToolbarButtons() {
       )}
 
       <ToolbarGroup>
-        <CommentToolbarButton />
+        {/* <CommentToolbarButton /> */}
 
         {!readOnly && <MoreDropdownMenu />}
       </ToolbarGroup>

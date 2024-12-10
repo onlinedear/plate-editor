@@ -63,8 +63,8 @@ export const aiChatItems = {
           ? `<Document>
 {editor}
 </Document>
-Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
-          : 'Continue writing AFTER <Block> ONLY ONE SENTENCE. DONT REPEAT THE TEXT.',
+开始写一篇新的文章`
+          : '在<block>之后继续写入单个句子，不要重复文本。',
       });
     },
   },
@@ -83,6 +83,7 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
     label: '解释',
     value: 'explain',
     onSelect: ({ editor }) => {
+      console.log('解释');
       void editor.getApi(AIChatPlugin).aiChat.submit({
         prompt: {
           default: 'Explain {editor}',
@@ -91,16 +92,16 @@ Start writing a new paragraph AFTER <Document> ONLY ONE SENTENCE`
       });
     },
   },
-  fixSpelling: {
-    icon: <Check />,
-    label: '纠错',
-    value: 'fixSpelling',
-    onSelect: ({ editor }) => {
-      void editor.getApi(AIChatPlugin).aiChat.submit({
-        prompt: 'Fix spelling and grammar',
-      });
-    },
-  },
+  // fixSpelling: {
+  //   icon: <Check />,
+  //   label: '纠错',
+  //   value: 'fixSpelling',
+  //   onSelect: ({ editor }) => {
+  //     void editor.getApi(AIChatPlugin).aiChat.submit({
+  //       prompt: '纠错',
+  //     });
+  //   },
+  // },
   improveWriting: {
     icon: <Wand />,
     label: '优化',
@@ -226,7 +227,7 @@ const menuStateItems: Record<
         aiChatItems.improveWriting,
         aiChatItems.makeLonger,
         aiChatItems.makeShorter,
-        aiChatItems.fixSpelling,
+        // aiChatItems.fixSpelling,
         // aiChatItems.simplifyLanguage,
       ],
     },
