@@ -69,6 +69,7 @@ export function FilePopover({ children, onOpenClick }: FilePopoverProps) {
           >
             查看文件
           </Button>
+          {/* <CaptionButton variant="ghost" >修改标题</CaptionButton> */}
           <Separator orientation="vertical" className="mx-1 h-6" />
           <Button size="icon" variant="ghost" {...buttonProps}>
             <Trash2Icon />

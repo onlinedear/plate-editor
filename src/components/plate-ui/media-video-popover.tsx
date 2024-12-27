@@ -30,7 +30,7 @@ export interface MediaPopoverProps {
   plugin: WithRequiredKey;
 }
 
-export function MediaPopover({ children, plugin }: MediaPopoverProps) {
+export function MediaVideoPopover({ children, plugin }: MediaPopoverProps) {
   const readOnly = useReadOnly();
   const selected = useSelected();
 
@@ -70,7 +70,7 @@ export function MediaPopover({ children, plugin }: MediaPopoverProps) {
 
               <FloatingMediaPrimitive.UrlInput
                 className={inputVariants({ h: 'sm', variant: 'ghost' })}
-                placeholder="输入图片链接"
+                placeholder="输入视频链接"
                 options={{ plugin }}
               />
             </div>

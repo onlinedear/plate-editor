@@ -69,14 +69,13 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem
-                className="min-w-[180px]"
+                disabled={tableSelected}
                 onSelect={() => {
                   insertTable(editor, {}, { select: true });
                   focusEditor(editor);
                 }}
               >
-                <Plus />
-                插入表格
+                <Plus /> 插入表格
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="min-w-[180px]"

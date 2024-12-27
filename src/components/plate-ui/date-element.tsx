@@ -46,9 +46,9 @@ export const DateElement = withRef<typeof PlateElement>(
                       today.setDate(today.getDate() + 2)
                     ).toDateString() === elementDate.toDateString();
 
-                  if (isToday) return '今天';
-                  if (isYesterday) return '昨天';
-                  if (isTomorrow) return '明天';
+                  // if (isToday) return '今天';
+                  // if (isYesterday) return '昨天';
+                  // if (isTomorrow) return '明天';
 
                   return elementDate.toLocaleDateString(undefined, {
                     day: 'numeric',

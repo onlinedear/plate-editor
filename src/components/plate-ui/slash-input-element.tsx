@@ -65,21 +65,21 @@ interface Item {
 }
 
 const groups: Group[] = [
+  // {
+  //   group: 'AI',
+  //   items: [
+  //     {
+  //       focusEditor: false,
+  //       icon: <SparklesIcon />,
+  //       value: 'AI',
+  //       onSelect: (editor) => {
+  //         editor.getApi(AIChatPlugin).aiChat.show();
+  //       },
+  //     },
+  //   ],
+  // },
   {
-    group: 'AI',
-    items: [
-      {
-        focusEditor: false,
-        icon: <SparklesIcon />,
-        value: 'AI',
-        onSelect: (editor) => {
-          editor.getApi(AIChatPlugin).aiChat.show();
-        },
-      },
-    ],
-  },
-  {
-    group: 'Basic blocks',
+    group: 'block',
     items: [
       {
         icon: <PilcrowIcon />,
@@ -108,42 +108,42 @@ const groups: Group[] = [
       {
         icon: <ListIcon />,
         keywords: ['unordered', 'ul', '-'],
-        label: 'Bulleted list',
+        label: '无序列表',
         value: ListStyleType.Disc,
       },
       {
         icon: <ListOrdered />,
         keywords: ['ordered', 'ol', '1'],
-        label: 'Numbered list',
+        label: '有序列表',
         value: ListStyleType.Decimal,
       },
       {
         icon: <Square />,
         keywords: ['checklist', 'task', 'checkbox', '[]'],
-        label: 'To-do list',
+        label: '任务列表',
         value: INDENT_LIST_KEYS.todo,
       },
       {
         icon: <ChevronRightIcon />,
         keywords: ['collapsible', 'expandable'],
-        label: 'Toggle',
+        label: '折叠面板',
         value: TogglePlugin.key,
       },
       {
         icon: <Code2 />,
         keywords: ['```'],
-        label: 'Code Block',
+        label: '代码块',
         value: CodeBlockPlugin.key,
       },
       {
         icon: <Table />,
-        label: 'Table',
+        label: '表格',
         value: TablePlugin.key,
       },
       {
         icon: <Quote />,
         keywords: ['citation', 'blockquote', 'quote', '>'],
-        label: 'Blockquote',
+        label: '引用',
         value: BlockquotePlugin.key,
       },
     ].map((item) => ({
@@ -154,17 +154,17 @@ const groups: Group[] = [
     })),
   },
   {
-    group: 'Advanced blocks',
+    group: 'more',
     items: [
-      {
-        icon: <TableOfContentsIcon />,
-        keywords: ['toc'],
-        label: 'Table of contents',
-        value: TocPlugin.key,
-      },
+      // {
+      //   icon: <TableOfContentsIcon />,
+      //   keywords: ['toc'],
+      //   label: '目录',
+      //   value: TocPlugin.key,
+      // },
       {
         icon: <Columns3Icon />,
-        label: '3 columns',
+        label: '分栏卡片',
         value: 'action_three_columns',
       },
     ].map((item) => ({
@@ -175,13 +175,13 @@ const groups: Group[] = [
     })),
   },
   {
-    group: 'Inline',
+    group: 'time',
     items: [
       {
         focusEditor: true,
         icon: <CalendarIcon />,
         keywords: ['time'],
-        label: 'Date',
+        label: '日期',
         value: DatePlugin.key,
       },
     ].map((item) => ({
@@ -208,11 +208,11 @@ export const SlashInputElement = withRef<typeof PlateElement>(
           <InlineComboboxInput />
 
           <InlineComboboxContent>
-            <InlineComboboxEmpty>No results</InlineComboboxEmpty>
+            <InlineComboboxEmpty>暂无结果</InlineComboboxEmpty>
 
             {groups.map(({ group, items }) => (
               <InlineComboboxGroup key={group}>
-                <InlineComboboxGroupLabel>{group}</InlineComboboxGroupLabel>
+                {/* <InlineComboboxGroupLabel>{group}</InlineComboboxGroupLabel> */}
 
                 {items.map(
                   ({ focusEditor, icon, keywords, label, value, onSelect }) => (

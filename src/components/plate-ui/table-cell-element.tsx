@@ -50,7 +50,6 @@ export const TableCellElement = withRef<
 
   const { bottomProps, hiddenLeft, leftProps, rightProps } =
     useTableCellElementResizable(resizableState);
-
   return (
     <PlateElement
       ref={ref}
@@ -61,9 +60,9 @@ export const TableCellElement = withRef<
         element.background ? 'bg-[--cellBackground]' : 'bg-background',
         !hideBorder &&
           cn(
-            isHeader && 'text-left [&_>_*]:m-0',
+            isHeader && 'text-left [&_>_*]:m-0 bg-slate-100',
             'before:size-full',
-            selected && 'before:z-10 before:bg-muted',
+            selected && 'before:bg-slate-200',
             "before:absolute before:box-border before:select-none before:content-['']",
             borders &&
               cn(

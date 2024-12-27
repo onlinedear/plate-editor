@@ -46,6 +46,7 @@ import {
 } from '@udecode/plate-media/react';
 import { TablePlugin, insertTable } from '@udecode/plate-table/react';
 import { Path } from 'slate';
+import { ListPlugin } from '@udecode/plate-list/react';
 
 const ACTION_THREE_COLUMNS = 'action_three_columns';
 
@@ -167,6 +168,7 @@ export const setBlockType = (
       if (node[IndentListPlugin.key]) {
         unsetNodes(editor, [IndentListPlugin.key, 'indent'], { at: path });
       }
+  
       if (type in setBlockMap) {
         return setBlockMap[type](editor, type, entry);
       }

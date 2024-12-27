@@ -220,11 +220,11 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
     {
       group: '布局',
       items: [
-        {
-          icon: <TableOfContentsIcon />,
-          label: '目录',
-          value: TocPlugin.key,
-        },
+        // {
+        //   icon: <TableOfContentsIcon />,
+        //   label: '目录',
+        //   value: TocPlugin.key,
+        // },
         {
           icon: <Columns3Icon />,
           label: '分栏卡片',

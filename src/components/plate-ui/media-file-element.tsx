@@ -34,11 +34,10 @@ export const MediaFileElement = withHOC(
           <FilePopover onOpenClick={onDownload}>
             <div
               className="group relative m-0 flex cursor-pointer items-center rounded px-0.5 py-[3px] hover:bg-muted"
-              // onClick={onDownload}
               contentEditable={false}
               role="button"
             >
-              <div className="flex items-center gap-1 p-1">
+              <div className="flex items-center gap-1 p-1 flex-1">
                 <FileUp className="size-5" />
 
                 <div>{name}</div>
@@ -46,15 +45,17 @@ export const MediaFileElement = withHOC(
                 {/* TODO: add size */}
                 {/* <div className="text-muted-foreground">{element.size}</div> */}
               </div>
-
-              <Caption align="left">
-                <CaptionTextarea
-                  className="text-left"
-                  readOnly={readOnly}
-                  placeholder="输入标题"
-                />
-              </Caption>
+              <a className='text-sm px-2 py-1 hover:underline rounded-sm' href={unsafeUrl} target='_blank' >
+                下载
+              </a>
             </div>
+            <Caption align="left">
+              <CaptionTextarea
+                className="text-left"
+                readOnly={readOnly}
+                placeholder="输入标题"
+              />
+            </Caption>
           </FilePopover>
           {children}
         </PlateElement>

@@ -44,11 +44,12 @@ export const ImageElement = withHOC(
                 readOnly,
               }}
             >
-              <ResizeHandle
-                className={mediaResizeHandleVariants({ direction: 'left' })}
-                options={{ direction: 'left' }}
-              />
               <MediaPopover plugin={ImagePlugin}>
+                <ResizeHandle
+                  className={mediaResizeHandleVariants({ direction: 'left' })}
+                  options={{ direction: 'left' }}
+                />
+
                 <Image
                   ref={handleRef}
                   className={cn(
@@ -60,24 +61,23 @@ export const ImageElement = withHOC(
                   alt=""
                   {...nodeProps}
                 />
+                <ResizeHandle
+                  className={mediaResizeHandleVariants({
+                    direction: 'right',
+                  })}
+                  options={{ direction: 'right' }}
+                />
+                <Caption style={{ width }} align={align}>
+                  <CaptionTextarea
+                    readOnly={readOnly}
+                    onFocus={(e) => {
+                      e.preventDefault();
+                    }}
+                    placeholder="输入标题"
+                  />
+                </Caption>
               </MediaPopover>
-              <ResizeHandle
-                className={mediaResizeHandleVariants({
-                  direction: 'right',
-                })}
-                options={{ direction: 'right' }}
-              />
             </Resizable>
-
-            <Caption style={{ width }} align={align}>
-              <CaptionTextarea
-                readOnly={readOnly}
-                onFocus={(e) => {
-                  e.preventDefault();
-                }}
-                placeholder="输入标题"
-              />
-            </Caption>
           </figure>
 
           {children}

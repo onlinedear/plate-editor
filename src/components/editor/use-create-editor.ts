@@ -93,6 +93,7 @@ import { TableRowElement } from '@/components/plate-ui/table-row-element';
 import { TocElement } from '@/components/plate-ui/toc-element';
 import { ToggleElement } from '@/components/plate-ui/toggle-element';
 import { withDraggables } from '@/components/plate-ui/with-draggables';
+// import { HtmlReactPlugin } from '@udecode/plate-html/react';
 
 export const useCreateEditor = () => {
   return usePlateEditor({
@@ -166,6 +167,183 @@ export const useCreateEditor = () => {
           { text: ' to open the AI menu.' },
         ],
         type: ParagraphPlugin.key,
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                children: [
+                  {
+                    children: [
+                      {
+                        text: 'k',
+                      },
+                    ],
+                    type: 'p',
+                    id: 'csuuWVRl6M',
+                  },
+                ],
+                type: 'td',
+                id: 'AxEOxXcuC6',
+              },
+              {
+                children: [
+                  {
+                    children: [
+                      {
+                        text: '',
+                      },
+                    ],
+                    type: 'p',
+                    id: 'FTPIjId_j8',
+                  },
+                ],
+                type: 'td',
+                id: 'uUIsq7NQ2H',
+              },
+            ],
+            type: 'tr',
+            id: '0vz9XsZeHx',
+          },
+          {
+            children: [
+              {
+                children: [
+                  {
+                    children: [
+                      {
+                        text: '',
+                      },
+                    ],
+                    type: 'p',
+                    id: 'rE-3jhln7W',
+                  },
+                ],
+                type: 'td',
+                id: 'HKlQuTaKY7',
+              },
+              {
+                children: [
+                  {
+                    children: [
+                      {
+                        text: '',
+                      },
+                    ],
+                    type: 'p',
+                    id: '9Vwxm53ZKy',
+                  },
+                ],
+                type: 'td',
+                id: '5asgp0crBN',
+              },
+            ],
+            type: 'tr',
+            id: 'sHfNzq-bC5',
+          },
+        ],
+        type: 'table',
+        id: 'nFIc_kgYBe',
+      },
+      {
+        type: 'p',
+        id: 'cQ-arwH8yj',
+        children: [
+          {
+            text: 'fdsafdsf',
+          },
+          {
+            children: [
+              {
+                text: '',
+              },
+            ],
+            date: 'Thu Dec 12 2024',
+            type: 'date',
+            id: '_CenQGfwPC',
+          },
+          {
+            text: ' ',
+          },
+        ],
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                children: [
+                  {
+                    text: 'j',
+                  },
+                  {
+                    text: 'lkj',
+                    bold: true,
+                  },
+                ],
+                type: 'p',
+                id: 'U72KBxBNmH',
+              },
+            ],
+            type: 'column',
+            width: '33%',
+            id: 'wWis3M_p7G',
+          },
+          {
+            children: [
+              {
+                children: [
+                  {
+                    text: '',
+                  },
+                ],
+                type: 'p',
+                id: 'SsDBGPcQdO',
+              },
+            ],
+            type: 'column',
+            width: '33%',
+            id: 'La27xmFq4P',
+          },
+          {
+            children: [
+              {
+                children: [
+                  {
+                    text: '',
+                  },
+                ],
+                type: 'p',
+                id: '_a6QO0vFsN',
+              },
+            ],
+            type: 'column',
+            width: '33%',
+            id: 'mEGqluwna8',
+          },
+        ],
+        layout: [33, 33, 33],
+        type: 'column_group',
+        id: 'zxh_2hP14I',
+      },
+      {
+        children: [
+          {
+            text: '',
+          },
+        ],
+        isUpload: true,
+        name: '',
+        placeholderId: 'Bwx22ONe9Av2UKbmJ8KJe',
+        type: 'img',
+        url: 'https://images.unsplash.com/photo-1712688930249-98e1963af7bd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        id: 'Kg8qz2P1x1',
+        caption: [
+          {
+            text: 'fsdff',
+          },
+        ],
       },
     ],
   });

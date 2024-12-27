@@ -11,9 +11,11 @@ import {
 } from '@udecode/plate-basic-marks/react';
 import { useEditorReadOnly } from '@udecode/plate-common/react';
 import {
+  BaselineIcon,
   BoldIcon,
   Code2Icon,
   ItalicIcon,
+  PaintBucketIcon,
   StrikethroughIcon,
   UnderlineIcon,
   WandSparklesIcon,
@@ -26,6 +28,8 @@ import { MarkToolbarButton } from './mark-toolbar-button';
 import { MoreDropdownMenu } from './more-dropdown-menu';
 import { ToolbarGroup } from './toolbar';
 import { TurnIntoDropdownMenu } from './turn-into-dropdown-menu';
+import { FontColorPlugin, FontBackgroundColorPlugin } from '@udecode/plate-font/react';
+import { ColorDropdownMenu } from './color-dropdown-menu';
 
 export function FloatingToolbarButtons() {
   const readOnly = useEditorReadOnly();
@@ -69,9 +73,25 @@ export function FloatingToolbarButtons() {
               <StrikethroughIcon />
             </MarkToolbarButton>
 
+            <ColorDropdownMenu
+              nodeType={FontColorPlugin.key}
+              tooltip="文字颜色"
+            >
+              <BaselineIcon />
+            </ColorDropdownMenu>
+
+            <ColorDropdownMenu
+              nodeType={FontBackgroundColorPlugin.key}
+              tooltip="背景颜色"
+            >
+              <PaintBucketIcon />
+            </ColorDropdownMenu>
+
             <MarkToolbarButton nodeType={CodePlugin.key} tooltip="代码块 (⌘+E)">
               <Code2Icon />
             </MarkToolbarButton>
+
+       
 
             <LinkToolbarButton />
           </ToolbarGroup>
