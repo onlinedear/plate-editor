@@ -10,7 +10,7 @@ export const imageElementTramsform = ({
     'div',
     {
       class: `relative mt-4 mb-4 py-2 ${align === 'center' ? 'mx-auto' : align === 'left' ? 'float-left' : 'float-right'}`,
-      style: `width: ${node.width + 'px' || '100%'}`,
+      style: `${node.width ? node.width + 'px' : '100%'}`,
     },
     [
       new Element('image', {

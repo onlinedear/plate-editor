@@ -52,6 +52,7 @@ interface SettingsContextType {
 }
 
 export const models: Model[] = [
+  { label: 'deepseek-chat', value: 'deepseek-chat' },
   { label: 'gpt-4o-mini', value: 'gpt-4o-mini' },
   { label: 'gpt-4o', value: 'gpt-4o' },
   { label: 'gpt-4-turbo', value: 'gpt-4-turbo' },
@@ -221,9 +222,7 @@ export function SettingsDialog() {
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-xl">Settings</DialogTitle>
-          <DialogDescription>
-            Configure your API keys and preferences.
-          </DialogDescription>
+          <DialogDescription>配置您的密钥</DialogDescription>
         </DialogHeader>
 
         <form className="space-y-10" onSubmit={handleSubmit}>
@@ -237,14 +236,14 @@ export function SettingsDialog() {
             </div>
 
             <div className="space-y-4">
-              {renderApiKeyInput('openai', 'OpenAI API key')}
+              {renderApiKeyInput('openai', 'API key')}
 
               <div className="group relative">
                 <label
                   className="absolute start-1 top-0 z-10 block -translate-y-1/2 bg-background px-2 text-xs font-medium text-foreground group-has-[:disabled]:opacity-50"
                   htmlFor="select-model"
                 >
-                  Model
+                  模型
                 </label>
                 <Popover open={openModel} onOpenChange={setOpenModel}>
                   <PopoverTrigger id="select-model" asChild>
@@ -261,8 +260,8 @@ export function SettingsDialog() {
                   </PopoverTrigger>
                   <PopoverContent className="w-full p-0">
                     <Command>
-                      <CommandInput placeholder="Search model..." />
-                      <CommandEmpty>No model found.</CommandEmpty>
+                      <CommandInput placeholder="搜索模型" />
+                      <CommandEmpty>没有找到模型</CommandEmpty>
                       <CommandList>
                         <CommandGroup>
                           {models.map((m) => (
@@ -309,7 +308,7 @@ export function SettingsDialog() {
           </div> */}
 
           <Button size="lg" className="w-full" type="submit">
-            Save changes
+            保存更改
           </Button>
         </form>
 

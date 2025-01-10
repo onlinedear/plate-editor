@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
@@ -33,21 +33,25 @@ import {
   codeBlockElementTransform,
   codeLineElementTransform,
 } from '@/utils/transform-html/code-block.transform';
+import { Button } from '../plate-ui/button';
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+  DialogHeader,
+} from '@/components/common/dialog';
+import { ArrowUpToLineIcon } from 'lucide-react';
+import { Popover, PopoverTrigger } from '../plate-ui/popover';
+import HtmlCodePreview from './html-code-preview';
+
 export function PlateEditor() {
   const editor = useCreateEditor();
-  // const getHtml = () => {
-  //   console.log(editor.children[0].children);
-  //   const nodes = editor.children;
-  //   const html = editor.api.htmlReact.serialize({
-  //     nodes: nodes,
-  //     plateProps: { readOnly: true },
-  //     // if you use @udecode/plate-dnd
-  //     dndWrapper: (props) => <DndProvider backend={HTML5Backend} {...props} />,
-  //   });
-  //   console.log(html);
-  // };
 
   const htmlRef = useRef<any>();
+
+  const [htmlCode, setHtmlCode] = useState('');
 
   const getHtml = () => {
     const nodes = editor.children;
@@ -162,19 +166,13 @@ export function PlateEditor() {
         th: tableHeaderCellElementTransform,
       },
     });
-    console.log(html);
-    htmlRef.current!.innerHTML = html;
+    setHtmlCode(html);
   };
+
   return (
     <>
       <DndProvider backend={HTML5Backend}>
-        <Plate
-          editor={editor}
-          onChange={({ editor, value }) => {
-            console.log(value);
-            getHtml();
-          }}
-        >
+        <Plate editor={editor}>
           <EditorContainer>
             <Editor variant="default" />
           </EditorContainer>
@@ -182,16 +180,30 @@ export function PlateEditor() {
           <SettingsDialog />
         </Plate>
       </DndProvider>
-      {/* <button
-        className="fixed right-40 top-40 p-4 rounded-full border"
-        onClick={getHtml}
-      >
-        Get HTML
-      </button> */}
-      <div
-        ref={htmlRef}
-        className="border rounded fixed right-0 max-w-[700px] h-[800px] overflow-auto top-[100px] p-4 bg-white"
-      ></div>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button
+            variant="default"
+            className="fixed bottom-[100px] right-4 h-[32px]"
+            onClick={() => {
+              setTimeout(() => {
+                getHtml();
+              }, 500);
+            }}
+          >
+            <div className="flex items-center gap-2 ">
+              <ArrowUpToLineIcon />
+              导出HTML
+            </div>
+          </Button>
+        </DialogTrigger>
+        <DialogContent className="max-w-[max-content]">
+          <DialogHeader>
+            <DialogTitle>HTML 预览</DialogTitle>
+            <HtmlCodePreview code={htmlCode} />
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

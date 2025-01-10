@@ -7,7 +7,6 @@ import { useSettings } from '@/components/editor/settings';
 
 export const useChat = () => {
   const { keys, model } = useSettings();
-
   return useBaseChat({
     id: 'editor',
     api: '/api/ai/command',

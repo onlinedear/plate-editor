@@ -337,7 +337,7 @@ export const useCreateEditor = () => {
         name: '',
         placeholderId: 'Bwx22ONe9Av2UKbmJ8KJe',
         type: 'img',
-        url: 'https://images.unsplash.com/photo-1712688930249-98e1963af7bd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        url: 'https://www4.bing.com//th?id=OHR.BubbleLake_ZH-CN7146244555_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp',
         id: 'Kg8qz2P1x1',
         caption: [
           {

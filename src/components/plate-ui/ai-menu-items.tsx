@@ -48,7 +48,7 @@ export const aiChatItems = {
   },
   continueWrite: {
     icon: <PenLine />,
-    label: '续写',
+    label: '继续撰写',
     value: 'continueWrite',
     onSelect: ({ editor }) => {
       const ancestorNode = getAncestorNode(editor);
@@ -98,7 +98,7 @@ export const aiChatItems = {
   //   value: 'fixSpelling',
   //   onSelect: ({ editor }) => {
   //     void editor.getApi(AIChatPlugin).aiChat.submit({
-  //       prompt: '纠错',
+  //       prompt: 'fix spelling',
   //     });
   //   },
   // },

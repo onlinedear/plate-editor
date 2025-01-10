@@ -6,7 +6,7 @@ import { SettingsProvider } from '@/components/editor/settings';
 export default function Page() {
   const isFullScreen = false;
   const AreaClass =
-    'w-[800px] h-[800px] mt-[100px] border-[#eee] border-solid border  rounded-md';
+    'w-[800px] h-[800px] mt-[100px] mx-auto border-[#eee] border-solid border  rounded-md';
   return (
     <div
       className={
@@ -20,7 +20,7 @@ export default function Page() {
         <PlateEditor />
       </SettingsProvider>
 
-      <Toaster />
+      <Toaster position={'top-center'} />
     </div>
   );
 }

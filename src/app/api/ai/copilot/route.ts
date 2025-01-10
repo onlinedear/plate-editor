@@ -7,11 +7,10 @@ import { NextResponse } from 'next/server';
 export async function POST(req: NextRequest) {
   const {
     apiKey: key,
-    model = 'gpt-4o-mini',
+    model = 'deepseek-chat',
     prompt,
     system,
   } = await req.json();
-
   const apiKey = key || process.env.OPENAI_API_KEY;
 
   if (!apiKey) {
@@ -21,7 +20,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const openai = createOpenAI({ apiKey });
+  const openai = createOpenAI({ apiKey, baseURL: 'https://api.deepseek.com' });
 
   try {
     const result = await generateText({

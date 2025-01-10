@@ -70,12 +70,12 @@ export function FixedToolbarButtons() {
             <UndoToolbarButton />
             <RedoToolbarButton />
           </ToolbarGroup>
-          {/* 
+          
           <ToolbarGroup>
             <AIToolbarButton tooltip="AI 命令">
               <WandSparklesIcon />
             </AIToolbarButton>
-          </ToolbarGroup> */}
+          </ToolbarGroup>
 
           <ToolbarGroup>
             <ExportToolbarButton>

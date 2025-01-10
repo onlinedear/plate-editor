@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
   const {
     apiKey: key,
     messages,
-    model = 'gpt-4o-mini',
+    model = 'deepseek-chat',
     system,
   } = await req.json();
 
@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const openai = createOpenAI({ apiKey });
+  const openai = createOpenAI({ apiKey, baseURL: 'https://api.deepseek.com' });
 
   try {
     const result = await streamText({
