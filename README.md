@@ -1,52 +1,33 @@
-# Playground Template
-
-A Next.js 15 template with [Plate](https://platejs.org/) AI, plugins and components.
+# plate 编辑器
+一个基于 slate + platejs 的AI编辑器 [体验地址](https://plate-editor.liushuaiyang.com/editor)
+> 快来体验AI编辑器有什么不一样吧
 
 ## Features
+- 支持 AI 生成内容
+- 优雅的 UI 设计
+- 支持导出PDF、导出图片、生成`html格式`字符串
+- 支持代码高亮
+- 支持图片、视频、音频、文件上传
+- 支持文件上传
+- 支持表格
+- 支持拖拽
+- 支持快捷键
 
-- Next.js 15 App Directory
-- [Plate](https://platejs.org/) editor
-- [shadcn/ui](https://ui.shadcn.com/)
-
-## Installation
-
-Choose one of these methods:
-
-### 1. Using CLI (Recommended)
-
-```bash
-npx shadcx@latest init plate
-```
-
-```bash
-npx shadcx@latest add plate/editor-ai
-```
-
-### 2. Using Template
-
-[Use this template](https://github.com/udecode/plate-playground-template/generate), then install dependencies:
+## 安装
 
 ```bash
 pnpm install
 ```
 
-## Development
+### 运行
 
-Copy the example env file:
+配置 `.env.local`:
 
-```bash
-cp .env.example .env.local
-```
-
-Configure `.env.local`:
-
-- `OPENAI_API_KEY` – OpenAI API key ([get one here](https://platform.openai.com/account/api-keys))
-- `UPLOADTHING_TOKEN` – UploadThing API key ([get one here](https://uploadthing.com/dashboard))
-
-Start the development server:
+- `OPENAI_API_KEY` – DeepSeek API key ([点击获取](https://platform.deepseek.com/api_keys))
+- DeepSeek API 文档 - [DeepSeek API](https://api-docs.deepseek.com/zh-cn/)
 
 ```bash
 pnpm dev
 ```
 
-Visit http://localhost:3000/editor to see the editor in action.
+访问 http://localhost:3000/editor 

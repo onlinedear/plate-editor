@@ -160,11 +160,11 @@ export const useCreateEditor = () => {
       },
       {
         children: [
-          { text: 'A rich-text editor with AI capabilities. Try the ' },
-          { bold: true, text: 'AI commands' },
-          { text: ' or use ' },
+          { text: '快来AI编辑器体验吧！使用' },
+          { bold: true, text: 'AI 生成' },
+          { text: '按下' },
           { kbd: true, text: 'Cmd+J' },
-          { text: ' to open the AI menu.' },
+          { text: '打开 AI 菜单' },
         ],
         type: ParagraphPlugin.key,
       },
@@ -177,7 +177,7 @@ export const useCreateEditor = () => {
                   {
                     children: [
                       {
-                        text: 'k',
+                        text: '这是一个表格',
                       },
                     ],
                     type: 'p',
@@ -251,7 +251,7 @@ export const useCreateEditor = () => {
         id: 'cQ-arwH8yj',
         children: [
           {
-            text: 'fdsafdsf',
+            text: '抢过年回家车票，我准备好了',
           },
           {
             children: [
@@ -259,7 +259,7 @@ export const useCreateEditor = () => {
                 text: '',
               },
             ],
-            date: 'Thu Dec 12 2024',
+            date: 'Thu Dec 1 2025',
             type: 'date',
             id: '_CenQGfwPC',
           },
@@ -268,65 +268,7 @@ export const useCreateEditor = () => {
           },
         ],
       },
-      {
-        children: [
-          {
-            children: [
-              {
-                children: [
-                  {
-                    text: 'j',
-                  },
-                  {
-                    text: 'lkj',
-                    bold: true,
-                  },
-                ],
-                type: 'p',
-                id: 'U72KBxBNmH',
-              },
-            ],
-            type: 'column',
-            width: '33%',
-            id: 'wWis3M_p7G',
-          },
-          {
-            children: [
-              {
-                children: [
-                  {
-                    text: '',
-                  },
-                ],
-                type: 'p',
-                id: 'SsDBGPcQdO',
-              },
-            ],
-            type: 'column',
-            width: '33%',
-            id: 'La27xmFq4P',
-          },
-          {
-            children: [
-              {
-                children: [
-                  {
-                    text: '',
-                  },
-                ],
-                type: 'p',
-                id: '_a6QO0vFsN',
-              },
-            ],
-            type: 'column',
-            width: '33%',
-            id: 'mEGqluwna8',
-          },
-        ],
-        layout: [33, 33, 33],
-        type: 'column_group',
-        id: 'zxh_2hP14I',
-      },
+     
       {
         children: [
           {
