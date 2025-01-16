@@ -49,7 +49,7 @@ const HtmlCodePreview: FC<HtmlCodePreviewProps> = ({ code }) => {
         <TabsContent value="code">
           <div className="w-full flex justify-end items-center  h-[32px]  bg-slate-100 px-2 py-1 rounded-t-sm">
             <div
-              className=" cursor-pointer "
+              className="cursor-pointer"
               onClick={() => {
                 navigator.clipboard.writeText(formattedHtml);
                 toast.success('复制成功');

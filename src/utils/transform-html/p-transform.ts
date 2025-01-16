@@ -97,7 +97,7 @@ export const pElementTransform = ({ node, children }: TransformOptionType) => {
       {
         class:
           'slate-p py-1 ',
-        style: `${lineHeight ? `line-height: ${lineHeight};` : ''} ${indent ? `padding-left: ${indent * 24}px;` : ''}  ${align ? `text-align: ${align};` : ''}`,
+        style: `${lineHeight ? `line-height: ${lineHeight};` : ''}${indent ? `padding-left: ${indent * 24}px;` : ''}${align ? `text-align: ${align};` : ''}`,
       },
       [...children, new Element('br', {}, [])]
     );
