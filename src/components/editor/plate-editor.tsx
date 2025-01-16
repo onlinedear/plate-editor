@@ -49,8 +49,6 @@ import HtmlCodePreview from './html-code-preview';
 export function PlateEditor() {
   const editor = useCreateEditor();
 
-  const htmlRef = useRef<any>();
-
   const [htmlCode, setHtmlCode] = useState('');
 
   const getHtml = () => {
@@ -176,7 +174,6 @@ export function PlateEditor() {
           <EditorContainer>
             <Editor variant="default" />
           </EditorContainer>
-
           <SettingsDialog />
         </Plate>
       </DndProvider>
